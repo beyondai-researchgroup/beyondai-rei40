@@ -1,0 +1,97 @@
+{
+  "LOGIN": {
+    "TITLE": "REI-40",
+    "SUBTITLE": "Thinking styles questionnaire",
+    "PARTICIPANT_LABEL": "Participant identification code",
+    "PARTICIPANT_PLACEHOLDER": "e.g. 001",
+    "PARTICIPANT_ERROR": "Enter your identification code.",
+    "PARTICIPANT_NOT_FOUND": "No participant found with this code.",
+    "CHECK_ERROR": "Error checking the participant. Please try again.",
+    "PERSONAL_LINK_REQUIRED": "This participant can only be accessed via the personal link you were emailed.",
+    "SUBMIT": "Continue",
+    "SUBMIT_CHECKING": "Checking…",
+    "ALREADY_DONE": "This participant has already completed the REI-40 questionnaire.",
+    "LANG_LABEL": "Language"
+  },
+  "TEST": {
+    "TITLE": "REI-40 questionnaire",
+    "LEAD": "For each statement, choose how well it applies to you, from \"definitely not true of myself\" to \"definitely true of myself\".",
+    "SCALE_LOW": "Definitely not true of myself",
+    "SCALE_HIGH": "Definitely true of myself",
+    "PROGRESS": "{{answered}}/{{total}} answered",
+    "SUBMIT": "Submit answers",
+    "SUBMIT_SENDING": "Sending…",
+    "SUBMIT_HINT": "Answer every statement to submit the questionnaire.",
+    "SUBMIT_ERROR": "Error sending your answers. Please try again."
+  },
+  "SUBSCALE": {
+    "RA": "Rational Ability",
+    "RE": "Rational Engagement",
+    "EA": "Experiential Ability",
+    "EE": "Experiential Engagement",
+    "RATIONALITY": "Rationality",
+    "EXPERIENTIALITY": "Experientiality (intuition)"
+  },
+  "DONE": {
+    "TITLE": "Thank you!",
+    "TEXT": "Your answers were saved successfully. You may close this page."
+  },
+  "ACCESS_INFO": {
+    "TITLE": "Access via personal link only",
+    "TEXT": "This questionnaire can only be accessed via the personal link emailed to you after you gave consent to participate in the research. Check your inbox, or contact the researcher at beyondai.researchgroup@gmail.com if you didn't receive an email."
+  },
+  "LINK": {
+    "LOADING": "Checking your link…",
+    "ALREADY_TITLE": "Questionnaire already completed",
+    "ALREADY_TEXT": "You've already completed this questionnaire, thank you! You may close this page.",
+    "ERROR_TITLE": "Invalid link",
+    "ERROR_EXPIRED": "This link has expired (links are valid for 24 hours). Please contact the researcher to get a new one.",
+    "ERROR_NOT_FOUND": "This link wasn't recognized. Check that you copied the full link from the email, or contact the researcher.",
+    "ERROR_NOT_ACTIVE": "This link isn't active right now. Please contact the researcher.",
+    "ERROR_SERVER": "An error occurred while checking your link. Please try again shortly."
+  },
+  "REI40": {
+    "ITEM": {
+      "1": "I have a logical mind.",
+      "2": "I am not that good at figuring out complicated problems.",
+      "3": "Reasoning things out carefully is not one of my strong points.",
+      "4": "I am not that good at solving problems that require careful logical analysis.",
+      "5": "I don't reason well under pressure.",
+      "6": "I am much better at figuring things out logically than most people.",
+      "7": "I usually have clear, explicable reasons for my decisions.",
+      "8": "I have no problem thinking things through carefully.",
+      "9": "Using logic usually works well for me in figuring out problems in my life.",
+      "10": "I am not a very analytical thinker.",
+      "11": "I try to avoid situations that require thinking in depth about something.",
+      "12": "I enjoy intellectual challenges.",
+      "13": "I don't like to have to do a lot of thinking.",
+      "14": "I enjoy solving problems that require hard thinking.",
+      "15": "Thinking is not my idea of an enjoyable activity.",
+      "16": "I prefer complex problems to simple problems.",
+      "17": "Thinking hard and for a long time about something gives me little satisfaction.",
+      "18": "I enjoy thinking in abstract terms.",
+      "19": "Knowing the answer without understanding the reasoning behind it is good enough for me.",
+      "20": "Learning new ways to think would be very appealing to me.",
+      "21": "I don't have a very good sense of intuition.",
+      "22": "Relying on my gut feelings usually works well for me in figuring out problems in my life.",
+      "23": "I believe in trusting my hunches.",
+      "24": "I trust my initial feelings about people.",
+      "25": "When it comes to trusting people, I can usually rely on my gut feelings.",
+      "26": "If I were to rely on my gut feelings, I would often be wrong.",
+      "27": "I rarely make mistakes when I listen to my deepest gut feelings to find an answer.",
+      "28": "My snap judgments are probably not as good as most people's.",
+      "29": "I can usually feel when a person is right or wrong, even if I can't explain how I know.",
+      "30": "I suspect my hunches are inaccurate as often as they are accurate.",
+      "31": "I like to rely on my intuitive impressions.",
+      "32": "Intuition can be a very useful way to solve problems.",
+      "33": "I often go by my instincts when deciding on a course of action.",
+      "34": "I don't like situations in which I have to rely on intuition.",
+      "35": "I think there are times when one should rely on one's intuition.",
+      "36": "I think it is foolish to make important decisions based on feelings.",
+      "37": "I don't think it is a good idea to rely on one's intuition for important decisions.",
+      "38": "I generally don't depend on my feelings to help me make decisions.",
+      "39": "I would not want to depend on anyone who described himself or herself as intuitive.",
+      "40": "I tend to use my heart as a guide for my actions."
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "LOGIN": {
+    "TITLE": "REI-40",
+    "SUBTITLE": "Upitnik o stilu razmišljanja",
+    "PARTICIPANT_LABEL": "Identifikacioni kod učesnika",
+    "PARTICIPANT_PLACEHOLDER": "npr. 001",
+    "PARTICIPANT_ERROR": "Unesite identifikacioni kod.",
+    "PARTICIPANT_NOT_FOUND": "Učesnik sa ovim kodom nije pronađen.",
+    "CHECK_ERROR": "Greška pri proveri učesnika. Pokušajte ponovo.",
+    "PERSONAL_LINK_REQUIRED": "Ovom učesniku se može pristupiti samo preko ličnog linka koji ste dobili mejlom.",
+    "SUBMIT": "Nastavi",
+    "SUBMIT_CHECKING": "Proveravam…",
+    "ALREADY_DONE": "Ovaj učesnik je već popunio REI-40 upitnik.",
+    "LANG_LABEL": "Jezik"
+  },
+  "TEST": {
+    "TITLE": "REI-40 upitnik",
+    "LEAD": "Za svaku tvrdnju izaberite koliko se odnosi na vas, od „uopšte se ne odnosi na mene” do „potpuno se odnosi na mene”.",
+    "SCALE_LOW": "Uopšte se ne odnosi na mene",
+    "SCALE_HIGH": "Potpuno se odnosi na mene",
+    "PROGRESS": "{{answered}}/{{total}} odgovoreno",
+    "SUBMIT": "Pošalji odgovore",
+    "SUBMIT_SENDING": "Šaljem…",
+    "SUBMIT_HINT": "Odgovorite na sve tvrdnje da biste mogli da pošaljete upitnik.",
+    "SUBMIT_ERROR": "Greška pri slanju odgovora. Pokušajte ponovo."
+  },
+  "SUBSCALE": {
+    "RA": "Racionalna sposobnost",
+    "RE": "Racionalna angažovanost",
+    "EA": "Ekspericijalna (intuitivna) sposobnost",
+    "EE": "Ekspericijalna (intuitivna) angažovanost",
+    "RATIONALITY": "Racionalnost",
+    "EXPERIENTIALITY": "Ekspericijalnost (intuicija)"
+  },
+  "DONE": {
+    "TITLE": "Hvala vam!",
+    "TEXT": "Vaši odgovori su uspešno sačuvani. Možete zatvoriti ovu stranicu."
+  },
+  "ACCESS_INFO": {
+    "TITLE": "Pristup samo preko ličnog linka",
+    "TEXT": "Ovom upitniku možete pristupiti samo preko ličnog linka koji ste dobili mejlom nakon što ste dali pristanak za učešće u istraživanju. Proverite svoj inboks, ili se obratite istraživaču na beyondai.researchgroup@gmail.com ako niste dobili mejl."
+  },
+  "LINK": {
+    "LOADING": "Proveravam link…",
+    "ALREADY_TITLE": "Upitnik je već popunjen",
+    "ALREADY_TEXT": "Već ste popunili ovaj upitnik, hvala Vam! Možete zatvoriti ovu stranicu.",
+    "ERROR_TITLE": "Link nije važeći",
+    "ERROR_EXPIRED": "Ovaj link je istekao (linkovi važe 24 sata). Obratite se istraživaču kako bi Vam poslao novi link.",
+    "ERROR_NOT_FOUND": "Ovaj link nije prepoznat. Proverite da li ste kopirali ceo link iz mejla, ili se obratite istraživaču.",
+    "ERROR_NOT_ACTIVE": "Ovaj link trenutno nije aktivan. Obratite se istraživaču.",
+    "ERROR_SERVER": "Došlo je do greške pri proveri linka. Pokušajte ponovo malo kasnije."
+  },
+  "REI40": {
+    "ITEM": {
+      "1": "Imam logičan način razmišljanja.",
+      "2": "Nisam naročito dobar/ra u rešavanju komplikovanih problema.",
+      "3": "Pažljivo razmišljanje o stvarima nije jedna od mojih jačih strana.",
+      "4": "Nisam naročito dobar/ra u rešavanju problema koji zahtevaju pažljivu logičku analizu.",
+      "5": "Ne razmišljam dobro pod pritiskom.",
+      "6": "Mnogo sam bolji/a u logičkom rešavanju stvari nego većina ljudi.",
+      "7": "Obično imam jasne i objašnjive razloge za svoje odluke.",
+      "8": "Nemam problem da pažljivo promislim o stvarima.",
+      "9": "Korišćenje logike mi obično dobro pomaže u rešavanju životnih problema.",
+      "10": "Ne smatram sebe naročito analitičnim misliocem.",
+      "11": "Trudim se da izbegavam situacije koje zahtevaju duboko razmišljanje o nečemu.",
+      "12": "Uživam u intelektualnim izazovima.",
+      "13": "Ne volim kada moram mnogo da razmišljam.",
+      "14": "Uživam u rešavanju problema koji zahtevaju naporno razmišljanje.",
+      "15": "Razmišljanje za mene nije pojam zabavne aktivnosti.",
+      "16": "Više volim složene nego jednostavne probleme.",
+      "17": "Dugotrajno i naporno razmišljanje o nečemu mi pričinjava malo zadovoljstva.",
+      "18": "Uživam u razmišljanju o apstraktnim pojmovima.",
+      "19": "Dovoljno mi je da znam odgovor, a da ne moram da razumem logiku koja stoji iza njega.",
+      "20": "Učenje novih načina razmišljanja mi je veoma privlačno.",
+      "21": "Nemam naročito dobar osećaj za intuiciju.",
+      "22": "Oslanjanje na unutrašnji osećaj mi obično pomaže u rešavanju životnih problema.",
+      "23": "Verujem da treba verovati predosećajima.",
+      "24": "Verujem svojim prvim utiscima o ljudima.",
+      "25": "Kada je u pitanju poverenje u ljude, obično se mogu osloniti na svoj unutrašnji osećaj.",
+      "26": "Kada bih se oslanjao/la na svoje unutrašnje osećaje, često bih grešio/la.",
+      "27": "Retko kada pogrešim kada slušam svoje najdublje unutrašnje osećaje da bih pronašao/la odgovor.",
+      "28": "Moje brzoplete procene verovatno nisu tako dobre kao kod većine ljudi.",
+      "29": "Obično mogu da osetim da li je osoba u pravu ili ne, čak i ako ne mogu da objasnim kako to znam.",
+      "30": "Sumnjam da su moji predosećaji podjednako često netačni koliko i tačni.",
+      "31": "Volim da se oslanjam na svoje intuitivne utiske.",
+      "32": "Intuicija može biti veoma koristan način za rešavanje problema.",
+      "33": "Često se vodim instinktima kada odlučujem o daljim koracima.",
+      "34": "Ne volim situacije u kojima moram da se oslonim na intuiciju.",
+      "35": "Mislim da postoje situacije kada se treba osloniti na intuiciju.",
+      "36": "Smatram da je glupo donositi važne odluke na osnovu osećanja.",
+      "37": "Mislim da nije dobra ideja oslanjati se na intuiciju kod važnih odluka.",
+      "38": "Generalno ne zavisim od svojih osećanja pri donošenju odluka.",
+      "39": "Ne bih želeo/la da zavisim od bilo koga ko sebe opisuje kao intuitivnu osobu.",
+      "40": "Sklon/a sam tome da koristim srce kao vodič za svoje postupke."
+    }
+  }
+}
