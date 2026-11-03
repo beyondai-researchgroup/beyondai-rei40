@@ -9,6 +9,7 @@ import cors from 'cors';
 import { neon } from '@neondatabase/serverless';
 import { createLocalSql } from './server/local-db.mjs';
 import { sendMail } from './server/email/mailer.mjs';
+import { resolveBranding } from './server/email/branding.mjs';
 import { buildIntroTaskEmail } from './server/email/introTaskEmail.mjs';
 
 const PORT = process.env.PORT || 4310;
@@ -193,7 +194,7 @@ app.get('/api/link/:token', async (req, res) => {
     // the Token itself is what's actually unique and already fully resolves which participant this
     // is, so the JOIN should follow that resolution, not re-derive it from a string that can collide.
     const rows = await sql`
-      SELECT sat."ParticipantId", sat."ParticipantGuid", sat."ExpiresAt", p."Language", r."Rei40Variant", r."ConsentPortalActive",
+      SELECT r."ShowBeyondAiBranding", sat."ParticipantId", sat."ParticipantGuid", sat."ExpiresAt", p."Language", r."Rei40Variant", r."ConsentPortalActive",
              r."TimerRei40Enabled", r."TimerRei40Minutes"
       FROM "SurveyAccessToken" sat
       JOIN "Participant" p ON p."Guid" = sat."ParticipantGuid"
@@ -207,24 +208,25 @@ app.get('/api/link/:token', async (req, res) => {
     }
     const row = rows[0];
     if (new Date(row.ExpiresAt) < new Date()) {
-      res.status(410).json({ error: 'EXPIRED' });
+      res.status(410).json({ error: 'EXPIRED', showBranding: row.ShowBeyondAiBranding !== false });
       return;
     }
     // 2026-09-09 master pause switch — same Research.ConsentPortalActive column the Consent
     // app's slug-link Activate/Deactivate toggle writes; a researcher pausing a research now also
     // closes already-issued REI-40 links, not just new Consent-app visits.
     if (!row.ConsentPortalActive) {
-      res.status(403).json({ error: 'NOT_ACTIVE' });
+      res.status(403).json({ error: 'NOT_ACTIVE', showBranding: row.ShowBeyondAiBranding !== false });
       return;
     }
     const existing = await sql`SELECT 1 FROM "Rei40Result" WHERE "ParticipantGuid" = ${row.ParticipantGuid} LIMIT 1`;
     if (existing.length) {
-      res.status(409).json({ error: 'ALREADY_COMPLETED' });
+      res.status(409).json({ error: 'ALREADY_COMPLETED', showBranding: row.ShowBeyondAiBranding !== false });
       return;
     }
     res.json({
       participantId: row.ParticipantId,
       lang: row.Language ?? 'sr',
+      showBranding: row.ShowBeyondAiBranding !== false,
       rei40Variant: row.Rei40Variant ?? 'v1',
       timerEnabled: row.TimerRei40Enabled === true,
       timerMinutes: row.TimerRei40Enabled ? row.TimerRei40Minutes : null,
@@ -259,7 +261,7 @@ const CODE_REVIEW_TOKEN_TTL_MS = 100 * 365 * 24 * 60 * 60 * 1000;
  */
 async function maybeSendIntroEmail(sql, participantGuid) {
   const rows = await sql`
-    SELECT p."Email", p."Language", r."TaskType", r."EmailSenderName", r."StudyDisplayName", r."Name" AS "ResearchName"
+    SELECT p."Email", p."Language", r."TaskType", r."EmailSenderName", r."StudyDisplayName", r."Name" AS "ResearchName", r."ShowBeyondAiBranding"
     FROM "Participant" p JOIN "Research" r ON r."Id" = p."ResearchId"
     WHERE p."Guid" = ${participantGuid}
   `;
@@ -289,8 +291,10 @@ async function maybeSendIntroEmail(sql, participantGuid) {
   `;
 
   const url = `${CODE_REVIEW_APP_URL}/?link=${token}`;
-  const senderName = p.EmailSenderName ?? p.StudyDisplayName ?? p.ResearchName ?? undefined;
-  const { subject, html } = buildIntroTaskEmail(p.Language ?? 'sr', { url, senderName });
+  // Branding off (Research.ShowBeyondAiBranding): neutral header / From name and no contact line (see server/email/branding.mjs).
+  const branding = resolveBranding({ showBranding: p.ShowBeyondAiBranding, emailSenderName: p.EmailSenderName, studyDisplayName: p.StudyDisplayName, name: p.ResearchName });
+  const senderName = branding.senderName ?? undefined;
+  const { subject, html } = buildIntroTaskEmail(p.Language ?? 'sr', { url, senderName, hideContact: branding.hideContact });
   await sendMail({ to: p.Email, subject, html, fromName: senderName });
 }
 

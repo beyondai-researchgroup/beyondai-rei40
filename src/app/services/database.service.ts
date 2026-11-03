@@ -69,6 +69,7 @@ export class DatabaseService {
             rei40Variant?: string;
             timerEnabled?: boolean;
             timerMinutes?: number | null;
+            showBranding?: boolean;
           }>(`/api/link/${encodeURIComponent(token)}`)
           .pipe(timeout(REQUEST_TIMEOUT_MS))
       );
@@ -79,11 +80,12 @@ export class DatabaseService {
         rei40Variant: res.rei40Variant ?? 'v1',
         timerEnabled: res.timerEnabled === true,
         timerMinutes: res.timerMinutes ?? null,
+        showBranding: res.showBranding,
       };
     } catch (err: any) {
       const code = err?.error?.error;
       if (code === 'NOT_FOUND' || code === 'EXPIRED' || code === 'ALREADY_COMPLETED' || code === 'NOT_ACTIVE') {
-        return { ok: false, error: code };
+        return { ok: false, error: code, showBranding: err?.error?.showBranding };
       }
       return { ok: false, error: 'SERVER_ERROR' };
     }
@@ -91,5 +93,5 @@ export class DatabaseService {
 }
 
 export type LinkResolveResult =
-  | { ok: true; participantId: string; lang: 'sr' | 'en'; rei40Variant: string; timerEnabled: boolean; timerMinutes: number | null }
-  | { ok: false; error: 'NOT_FOUND' | 'EXPIRED' | 'ALREADY_COMPLETED' | 'NOT_ACTIVE' | 'SERVER_ERROR' };
+  | { ok: true; participantId: string; lang: 'sr' | 'en'; rei40Variant: string; timerEnabled: boolean; timerMinutes: number | null; showBranding?: boolean }
+  | { ok: false; error: 'NOT_FOUND' | 'EXPIRED' | 'ALREADY_COMPLETED' | 'NOT_ACTIVE' | 'SERVER_ERROR'; showBranding?: boolean };
